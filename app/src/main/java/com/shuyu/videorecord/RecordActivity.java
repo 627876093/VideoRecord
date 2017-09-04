@@ -192,7 +192,7 @@ public class RecordActivity extends AppCompatActivity implements SurfaceHolder.C
                     @Override
                     public void onChronometerTick(Chronometer chronometer) {
                         //最大录制时长
-                        if (chronometer.getText().equals("00:61")) {
+                        if (chronometer.getText().equals("00:11")) {
                             if (flagRecord) {
                                 endRecord();
                             }
@@ -350,6 +350,7 @@ public class RecordActivity extends AppCompatActivity implements SurfaceHolder.C
             // Set output file format，输出格式
             recorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
 
+
             //必须在setEncoder之前
             recorder.setVideoFrameRate(15);  //帧数  一分钟帧，15帧就够了
             recorder.setVideoSize(SIZE_1, SIZE_2);//这个大小就够了
@@ -358,7 +359,9 @@ public class RecordActivity extends AppCompatActivity implements SurfaceHolder.C
             recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
             recorder.setVideoEncoder(MediaRecorder.VideoEncoder.H264);
 
-            recorder.setVideoEncodingBitRate(3 * SIZE_1 * SIZE_2);//第一个数字越大，清晰度就越高，考虑文件大小的缘故，就调整为1
+//            recorder.setVideoEncodingBitRate(3 * SIZE_1 * SIZE_2);//第一个数字越大，清晰度就越高，考虑文件大小的缘故，就调整为1
+
+            recorder.setVideoEncodingBitRate(2 * 1024 * 1024);
             int frontRotation;
             if (rotationRecord == 180) {
                 //反向的前置

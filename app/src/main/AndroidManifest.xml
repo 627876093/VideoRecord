@@ -39,6 +39,10 @@
             android:name=".PlayActivity"
             android:screenOrientation="portrait"
             android:theme="@style/FullTheme" />
+        <activity
+            android:name=".UploadVideoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullTheme" />
     </application>
 
 </manifest>

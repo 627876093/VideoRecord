@@ -21,4 +21,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, RecordActivity.class);
         startActivity(intent);
     }
+    @OnClick(R.id.record)
+    public void onClick1() {
+        Intent intent = new Intent(this, UploadVideoActivity.class);
+        startActivity(intent);
+    }
 }
